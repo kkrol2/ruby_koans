@@ -14,7 +14,23 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  array = [a,b,c]
+  array.sort!
+  if array[0]+array[1]<=array[2]
+  	raise TriangleError.new('bla')
+  end
+  if array[0]<=0
+  	raise TriangleError.new
+  end
+
+  if array[0] == array[1] and array[1] == array[2] 
+  	return :equilateral
+  end
+  if array[0] == array[1] or array[1]==array[2]
+  	return :isosceles
+  end
+  :scalene
+  
 end
 
 # Error class used in part 2.  No need to change this code.
